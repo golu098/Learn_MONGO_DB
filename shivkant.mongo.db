@@ -1,0 +1,71 @@
+// to show db which we are using 
+show dbs
+// change or create new db
+use shivkant
+// create collection (table) 1st methods 
+db.createCollection("University")
+// 2nd methods 
+// db.University.insertOne(Object)
+// insert document (data) into collection  2 methods :- insertOne({}) and insertMany([{},{}])
+db.University.insertMany([
+    {
+        FirstName:"shivkant",
+        LastName:"kumar",
+        Age:20,
+        Hobbies:["Listening Music","Playing Games"],
+
+    },
+     {
+        FirstName:"Golu",
+        LastName:"Sharma",
+        Age:19,
+        Hobbies:["Dancing","Playing Games"],
+        
+    },
+     {
+        FirstName:"Ram",
+        LastName:"kumar",
+        Age:2,
+        Hobbies:["Watching Tv","Playing Cricket"],
+        
+    },
+     {
+        FirstName:"Shyam",
+        LastName:"kumar",
+        Age:12,
+        Hobbies:["Listening Music","Playing Games"],
+        
+    },
+     {
+        FirstName:"Anchal",
+        LastName:"Sharma",
+        Age:18,
+        Hobbies:["Listening Music","Playing Games"],
+        
+    },
+])
+// to find any document we can use 2 methods:- find( ) or findOne()
+// db.University.find()
+//db.University.findOne({FirstName:"shivkant"})
+
+
+// we can also use projection :- it is a process of limiting the fields in results 0 means not include that specified fields or 1 means inlcude it  && If you want to project specific elements from an array field, you can use the $slice operator:
+//db.University.find({},{FirstName:1,LastName:1,Age:0,Hobbies:0})
+//db.University.find({}, { FirstName: 1, LastName: 1 })
+
+
+//---> update-----
+//db.University.updateOne({FirstName:"shivkant"},{$set:{FirstName:"Ravikant"}})
+//db.University.updateMany({}, { $inc: { Age: 1 } });
+//db.University.find()
+
+// --------->Delete -----------
+//db.University.deleteOne({Age:2});
+
+//----------MongoDB Query Operators:- comparison ,Logical,Evaluation(regex,text,where)
+
+// https://www.w3schools.com/mongodb/mongodb_update_operators.php
+
+
+
+
